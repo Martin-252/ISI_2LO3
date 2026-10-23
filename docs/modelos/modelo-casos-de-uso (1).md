@@ -223,22 +223,40 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 ### 6.1 Descripción detallada UC-05 — Actualizar perfil
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Identificador y nombre del caso de uso:** UR-03.
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+**Objetivo:** Actualizar los datos de contacto y de perfi.
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+**Participantes:** Actor principal es la persona usuaria. No hay nigun actor de apoyo.
 
-**Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
+**Precondiciones:** La persona usuaria ya cuenta con una cuenta activa y sesión iniciada. Los datos introducidos son válidos
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
+**Inicio:** El usuario busca actualizar su perfil en la web.
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
-
+**Escenario principal de éxito:** 1.El usuario elige modificar su perfil.
+2.El sistema presenta los datos actuales y distingue valores editables de los fijos.
+3.El usuario modifica los valores permitidos.
+4.El usuario solicita guardar los cambios.
+5.El sistema comprueba que los campos se modificaron correctamente y de forma válida según el acta.
+6.El sistema guarda los datos modificados y actualiza el perfil.
+7.El sistema confirma la actualización.
+8.El caso de uso ha finalizado
+**Extensiones (flujos alternativos):** 
+5.a. Campo modificado no válido
+  1.El sistema notifica que campos estas incorrectos numero de telefono.
+  2.No guarda nigun cambio.
+  3.Usuario corrige los datos.
+  4. El flujo vuleve a retomarse desde el paso 4.
+*.a El usuario cancela antes de guardar
+  1.El sistema descarta los cambios y el perfil conserva los valores anteriores.
+  2.Caso de uso termina sin actualizar perfil.
+6.b Sistema no puede guardar
 **Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
-
+Exito: Perfil contiene la informacion que se ha guardado
+Alias y correo-e mantiene sus valores originales
+Sin Exito: el perfil conserva los valores anteriores.
+No queda una actualización parcial.
 **Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
 
 **Preguntas abiertas:** [Registra solo las cuestiones necesarias que las fuentes no resuelvan. Si no hay preguntas para el alcance descrito, indícalo.]
