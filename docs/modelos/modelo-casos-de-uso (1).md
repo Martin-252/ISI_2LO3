@@ -242,6 +242,7 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 6.El sistema guarda los datos modificados y actualiza el perfil.
 7.El sistema confirma la actualización.
 8.El caso de uso ha finalizado
+
 **Extensiones (flujos alternativos):** 
 5.a. Campo modificado no válido
   1.El sistema notifica que campos estas incorrectos numero de telefono.
@@ -252,6 +253,7 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
   1.El sistema descarta los cambios y el perfil conserva los valores anteriores.
   2.Caso de uso termina sin actualizar perfil.
 6.b Sistema no puede guardar
+
 **Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
 Exito: Perfil contiene la informacion que se ha guardado
 Alias y correo-e mantiene sus valores originales
@@ -263,19 +265,38 @@ No queda una actualización parcial.
 
 ### 6.2 Descripción detallada UC-21 — Buscar recetas
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Identificador y nombre del caso de uso:** UC-21
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+**Objetivo:** Buscar recetas por ingredientes.
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+**Participantes:** Usuario
 
-**Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
+**Precondiciones:** El usuario debe de tener la sesión iniciada.
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
+**Inicio:** Usuario pide buscar recetas
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Escenario principal de éxito:** 
+
+1.El usuario elige buscar recetas
+2.Sistema permite indicar criterios de busqueda.
+3.El usuario elige o escribe que ingredientes que desea añadir o excluir.
+4.El usuario solicita ejecutar la busqueda.
+5.El sistema comprueba que los criterios sean aplicables.
+6.El sistema obtiene las recetas que cumplen esos criterios.
+7.El sistema ofrece una lista, con titulo, imagen, calificación promedio y descripción breve de las recetas.
+8.El usuario selecciona una receta de las listadas por el sistema.
+9.El sistema accede a su detalle.
+10.El caso finaliza
+**Extensiones (flujos alternativos):** 
+6.a No hay recetas publicadas y validas
+  1.El sistema informa que no hay resultados para esa búsqueda y conserva los criterios anterirores.
+  2.Se reanuda el flujo desdeel paso 2.
+3.b Mismo ingrediente incluido y excluido
+  1.El sistema señala el error y no se ejecuta la búsqueda hasta que el error quede solucionado.
+4.a No pudo completar la busqyeda
+  1.El sistema informa del problema  y se conservan los mismos criterios
+  2.Se termina el flujo.
 
 **Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
 
